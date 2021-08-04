@@ -1,0 +1,11 @@
+.img-con {
+  height: auto;
+  width: 400px;
+  padding: 5px;
+  background-color: grey;
+  justify-content: center;
+  display: flex;
+  .img {
+    width: 400px;
+  }
+}

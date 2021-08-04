@@ -1,0 +1,19 @@
+.post-con {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .img-com-con {
+    display: flex;
+    justify-content: center;
+  }
+  .textbox {
+    width: 400px;
+    text-align: center;
+  }
+}
+
+h1 {
+  font-size: 25px;
+  font-weight: 350;
+}
