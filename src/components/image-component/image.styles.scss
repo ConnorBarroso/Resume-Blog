@@ -2,9 +2,10 @@
   height: auto;
   width: 400px;
   padding: 5px;
-  background-color: grey;
   justify-content: center;
   display: flex;
+  border-width: 0px 0px 3px 0px;
+  border-color: black;
   .img {
     width: 400px;
   }

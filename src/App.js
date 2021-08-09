@@ -1,23 +1,34 @@
-import React, {useState, useEffect} from 'react'
-import { client } from './contentful/client';
+import React, {useState} from 'react'
+import { Switch, Route } from 'react-router';
+
 import PostList from './components/postList-component/post-list.component';
+import Header from './components/header-component/header.component';
+import ArticlePage from './components/article-page-component/article-page.component';
+
 import './App.css';
 
 function App() {
-  const [posts, setPosts]=useState( [] )
+  const [header, setHeader] = useState(true)
+  console.log(header)
 
-  useEffect(()=> {
-    client.getEntries()
-    .then((Response)=>{
-      setPosts(Response.items)
-      console.log(Response)
-      
-    })
-  },[])
-  console.log(posts)
+  const closeHeader = () =>{
+    setHeader(false)
+  }
+
+  const showHeader = ()=>{
+    setHeader(true)
+  }
+  
+  
   return (
     <div className="App">
-      <div className='postList-con'><PostList posts={posts}/></div>
+      { header ? ( <Header closeHeader = {closeHeader}/>) : (<button onClick={showHeader}>Show Header</button>)}
+      
+      <Switch>
+        <Route path='/blog' component={PostList} />
+        <Route path='/article/:id'  exact component={ArticlePage}/>
+      </Switch>
+
     </div>
   );
 }
