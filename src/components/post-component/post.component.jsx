@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useHistory } from 'react-router'
 import { formatRelative } from 'date-fns'
 import './post.styles.scss'
@@ -10,14 +10,11 @@ const Post = ({post, id, sys})=> {
 
     const handleOnClick = (id)=>{
         history.push(`/article/${id}`)
-  
     }
 
     const relativeDate =(date)=>{
         const newDate =formatRelative(new Date(date), new Date())
         return newDate
-
-
     }
 
     

@@ -1,12 +1,10 @@
 .img-con {
   height: auto;
   width: 400px;
-  padding: 5px;
+  margin: 3px;
   justify-content: center;
   display: flex;
-  border-width: 0px 0px 3px 0px;
-  border-color: black;
-  padding: 10px;
+
   .img {
     max-width: 400px;
   }

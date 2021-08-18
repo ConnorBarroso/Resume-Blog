@@ -47,7 +47,9 @@ const ArticlePage = ()=>{
 
             {article?.album && 
                 article.album?.map((image)=>(
-                    <div className='img-com-con' key={image.sys.id} ><Image  src={image.fields.file.url} /></div>  
+                    <div className='img-com-con' key={image.sys.id} >
+                        <Image  src={image.fields.file.url} />
+                    </div>  
                 ))
                 }
            
