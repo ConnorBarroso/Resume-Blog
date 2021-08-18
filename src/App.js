@@ -9,7 +9,6 @@ import './App.scss';
 
 function App() {
   const [header, setHeader] = useState(true)
-  console.log(header)
 
   const closeHeader = () =>{
     setHeader(false)

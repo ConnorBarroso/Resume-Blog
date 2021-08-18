@@ -30,7 +30,14 @@ const PostList = ()=> {
             {
                 posts?.map((post)=>{
                     return(
-                      <div className='post' ><Post key={post.sys.id} id={post.sys.id} post={post.fields} sys={post.sys} /></div>  
+                      <div className='post' >
+                        <Post
+                         key={post.sys.id}
+                         id={post.sys.id} 
+                         post={post.fields} 
+                         sys={post.sys}
+                        />
+                      </div>  
                     )
                     
                 })
