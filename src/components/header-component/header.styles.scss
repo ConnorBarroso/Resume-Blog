@@ -1,5 +1,6 @@
 $dark: #142850;
 $light: #d6eaf0;
+$Primary: #ff6464;
 
 .header-con {
   display: flex;
@@ -13,6 +14,9 @@ $light: #d6eaf0;
     cursor: pointer;
     height: 20px;
     color: $dark;
+    &:hover {
+      color: $Primary;
+    }
   }
   .items-con {
     display: flex;
