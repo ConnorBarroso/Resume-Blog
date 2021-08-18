@@ -1,0 +1,33 @@
+.article-con {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 5px;
+  background-color: white;
+  border-radius: 5px;
+  .media-con {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    .img-com-con {
+      width: fit-content;
+      max-width: calc(80%);
+      display: flex;
+      justify-content: center;
+      overflow-wrap: normal;
+    }
+  }
+
+  .textbox {
+    width: 80%;
+    text-align: center;
+    padding-top: 8px;
+    margin: 5px 0px;
+  }
+}
+
+h1 {
+  font-size: 25px;
+  font-weight: 350;
+}
