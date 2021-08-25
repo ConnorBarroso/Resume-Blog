@@ -21,7 +21,10 @@ function App() {
   
   return (
     <div className="App">
-      { header ? ( <div className='header'><Header closeHeader = {closeHeader}/></div>) : (<div  className='show-header' onClick={showHeader}>Show Header</div>)}
+      { header ?
+       ( <div className='header'><Header closeHeader = {closeHeader}/></div>) 
+       :
+        (<div  className='show-header' onClick={showHeader}>About Me</div>)}
       
       <Switch>
         <Route path='/' exact component={PostList} />
