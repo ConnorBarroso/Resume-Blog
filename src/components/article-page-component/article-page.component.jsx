@@ -88,9 +88,9 @@ const ArticlePage = ()=>{
                 )
            
                :(
-                   article?.text?.content[0]?.content?.map((textBox, index)=>(
+                   article?.text?.content?.map((textBox, index)=>(
                        <div key={index} className='textbox'>
-                           {textBox.value}
+                           {textBox?.content[0].value}
                         </div>
                     ))
                )
