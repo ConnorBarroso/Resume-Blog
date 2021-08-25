@@ -24,9 +24,8 @@ $Light: #8695a4;
   background-color: #d6eaf0;
   color: #142850;
   cursor: pointer;
-  opacity: 50%;
+
   &:hover {
     background-color: $Primary;
-    opacity: 100%;
   }
 }
