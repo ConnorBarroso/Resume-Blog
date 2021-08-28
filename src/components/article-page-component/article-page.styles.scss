@@ -29,8 +29,14 @@
   .textbox {
     display: flex;
     justify-content: center;
-    width: 500px;
-    text-align: center;
+    width: calc(80%);
+    text-align: left;
+    margin-top: 8px;
+  }
+  .link-con {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
   }
 }
 
