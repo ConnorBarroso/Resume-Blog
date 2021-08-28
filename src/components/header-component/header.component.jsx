@@ -18,7 +18,6 @@ const Header = ({closeHeader})=>{
             <div className='link-con'>
                 <a href='https://ca.linkedin.com/in/connor-barroso-926513217?' target="_blank" rel="noreferrer"><img className='link-img' src='https://image.flaticon.com/icons/png/512/174/174857.png' alt='linkedin logo'/></a>
                 <a href='https://github.com/ConnorBarroso' target="_blank" rel="noreferrer"><img className='link-img' src='https://image.flaticon.com/icons/png/512/38/38401.png' alt='github logo'/></a>
-                <a href='mailto:connor.barroso@gmail.com' target="_blank" rel="noreferrer"><img className='link-img' src='https://img-premium.flaticon.com/png/512/2875/premium/2875435.png?token=exp=1630095195~hmac=6a5d6b8bf86303cf6e78d0df14a6fcad' alt='gmail logo'/></a>
             </div>
             </div>
             
