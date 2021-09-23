@@ -8,14 +8,10 @@ $Light: #8695a4;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: calc(100vw);
+  width: 100vw;
+  max-width: 100%;
 }
-.header {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  top: 0px;
-}
+
 .show-header {
   position: fixed;
   width: 130px;

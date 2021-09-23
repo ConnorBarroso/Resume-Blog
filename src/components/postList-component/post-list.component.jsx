@@ -27,6 +27,7 @@ const PostList = ()=> {
 
     return(
         <div className='post-list'>
+          <h1 className='title'>Blog</h1>
             {
                 posts?.map((post)=>{
                     return(

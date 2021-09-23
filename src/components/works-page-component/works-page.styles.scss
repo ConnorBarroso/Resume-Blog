@@ -1,45 +1,78 @@
-$Primary: #ff6464;
 $Dark: #21243d;
 $Light: #8695a4;
+$Primary: #ff6464;
 @font-face {
   font-family: "Heebo";
   src: url("../../resources/Heebo-VariableFont_wght.ttf") format("truetype");
 }
 
-.post-list {
-  font-family: "Heebo";
-  margin: 100px 0px 0px 0px;
-  .title {
+.works-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: 90px 0px 0px 0px;
+  .works {
+    font-family: "Heebo", sans-serif;
     font-weight: 900;
     font-size: 44px;
     line-height: 60px;
     color: $Dark;
     width: 100%;
     text-align: left;
-    margin: 0px 0px 55px 0px;
+    margin: 0px;
   }
-  .post {
+  .featured {
+    font-family: "Heebo", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 60px;
+    color: $Dark;
+    margin: 15px 0px 13px 0px;
+    width: 100%;
+    text-align: left;
+  }
+  .work-con {
+    display: flex;
+    flex-direction: row;
+    margin: 31px 0px 15px 0px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+    width: fit-content;
+    .img-con {
+      width: 246px;
+      height: 148px;
+      margin: 3px;
+      justify-content: center;
+      display: flex;
+
+      .img {
+        max-width: 246px;
+        max-height: 148px;
+        border-radius: 6px;
+      }
+    }
     .post-con {
       display: flex;
       flex-direction: column;
       align-items: left;
       text-align: left;
       background-color: white;
-      border-bottom: 2px solid #e0e0e0;
+      margin-left: 18px;
       width: 50vw;
-      margin-top: 32px;
-      padding-bottom: 29px;
 
       height: auto;
 
       .title-con {
         width: fit-content;
         font-size: 30px;
-        font-weight: medium;
+        font-weight: 700;
+        line-height: 44px;
         margin: 5px;
         color: $Dark;
         cursor: pointer;
-        margin: 0px;
         &:hover {
           color: $Primary;
         }
@@ -48,18 +81,19 @@ $Light: #8695a4;
       .stamp-tags-con {
         display: flex;
         flex-direction: row;
-        margin: 16px 0px 10px 0px;
+        margin-bottom: 10px;
+        margin: 7px 6px 0px 5px;
 
         .timestamp {
-          margin: 0px 6px 0px 0px;
           color: $Dark;
           font-family: "Heebo";
           font-size: 18px;
           font-weight: 400;
           width: auto;
+          margin: 0px 5px 0px 0px;
         }
         .tags {
-          margin: 0px 6px 0px 0px;
+          margin: 0px 5px 0px 0px;
           padding-left: 5px;
           color: $Dark;
           font-family: "Heebo";
@@ -78,7 +112,7 @@ $Light: #8695a4;
         max-height: 63px;
         overflow: hidden;
         color: $Dark;
-        margin: 5px 5px 30px 0px;
+        margin: 5px 5px 0px 5px;
         font-size: 16;
       }
     }

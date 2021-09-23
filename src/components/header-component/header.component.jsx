@@ -1,27 +1,30 @@
 import React from 'react'
 
+import { Link, useLocation } from 'react-router-dom'
+
 import './header.styles.scss'
 
-const Header = ({closeHeader})=>{
+const Header = ()=>{
+   const location= useLocation()
+    const url = location.pathname
     return(
         <div className='header-con'>
-            <button className='header-x' onClick={closeHeader}>x</button>
-            <div className='items-con'>
-                <div className='text-con'>
-                <h1 className='text'>Welcome, I'm Connor Barroso.</h1>
-                <p className='text'>
-                    I am a React.js front end developer. I am building this blog to demonstrate my
-                    portfolio and to show how my skills in development change and mature over my 
-                    career.
-                </p>
-            </div>
-            <div className='link-con'>
-                <a href='https://ca.linkedin.com/in/connor-barroso-926513217?' target="_blank" rel="noreferrer"><img className='link-img' src='https://image.flaticon.com/icons/png/512/174/174857.png' alt='linkedin logo'/></a>
-                <a href='https://github.com/ConnorBarroso' target="_blank" rel="noreferrer"><img className='link-img' src='https://image.flaticon.com/icons/png/512/38/38401.png' alt='github logo'/></a>
-            </div>
-            </div>
+            {
+                url.includes('/Home/') ?
+                (<Link  className='header-link-active' to='/Home/'>Home</Link>)
+                : (<Link  className='header-link' to='/Home/'>Home</Link>)
+            }
+            {
+                url.includes('/Works/') ?
+                (<Link  className='header-link-active' to='/Works/'>Works</Link>)
+                : (<Link  className='header-link' to='/Works/'>Works</Link>)
+            }
+            {
+                url.includes('/article/') || url.includes('/Blog/') ?
+                (<Link  className='header-link-active' to='/Blog/'>Blog</Link>)
+                : (<Link  className='header-link' to='/Blog/'>Blog</Link>)
+            }
             
-            <img className='img' src='http://images.ctfassets.net/mh11o5zx6qwn/7tQhY0V6NEk3J0AvW80BHW/c1ef4a7639340c1328b7324b9725f833/profile-picture.jpg' alt='portrait' />
             
         </div> 
     )

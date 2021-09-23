@@ -26,13 +26,19 @@ const Post = ({post, id, sys})=> {
              onClick={()=>handleOnClick(id)}>
                  {post?.title}
             </div>
-            {<div className='timestamp'>
-                {!sys?.updatedAt? 
-                (relativeDate(sys.createdAt))
-                :(relativeDate(sys.updatedAt))
+            <div className='stamp-tags-con'>
+                {<p className='timestamp'>
+                    {!sys?.updatedAt? 
+                        (relativeDate(sys.createdAt))
+                        :(relativeDate(sys.updatedAt))
+                    }
+                </p> /* checks if there is no updated at timestamp, if there isn't one it uses the created at timestamp. */
                 }
-            </div> /* checks if there is no updated at timestamp, if there isn't one it uses the created at timestamp. */
-            }
+                {post?.tags &&
+                   ( <p className='tags'>{post?.tags}</p>)
+                }
+            </div>
+            
             {post?.description && 
                 <div className='large-textbox'>
                     {post.description}

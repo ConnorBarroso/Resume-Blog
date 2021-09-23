@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react'
-import YouTube from 'react-youtube'
 import { useParams } from 'react-router'
 import { client } from '../../contentful/client'
+import { formatRelative } from 'date-fns'
+//library imports
 
-import { opts } from '../post-component/opts'
+import { Text } from '../text-component/text.component'
 import { Image } from '../image-component/image.component'
+//component imports
 
 
 import './article-page.styles.scss'
+//stylesheet
 
 
 const ArticlePage = ()=>{
@@ -20,7 +23,7 @@ const ArticlePage = ()=>{
         client.getEntry(id)
         .then((response)=> { 
             setArticleInfo(response)
-            console.log(response)
+            console.log('Article Info',response)
            
         })
         .catch(console.error)
@@ -39,6 +42,10 @@ const ArticlePage = ()=>{
 
         
     }
+    const relativeDate =(date)=>{
+        const newDate =formatRelative(new Date(date), new Date())
+        return newDate
+    }
     
     const article = articleInfo.fields
     
@@ -48,69 +55,126 @@ const ArticlePage = ()=>{
     const links = hyperlinkFilter()
     
     return(
-        <div className='article-con'>
-            <h1 className='title'>{article?.title}</h1> 
+        <div className='article-page'>
+            <div className='article-con'>
 
-            {article?.description && 
-                <div className='description'>
-                    {article.description}
+                <h1 className='title'>{article?.title}</h1> 
+
+                <div className='details-con'>
+
+                {articleInfo?.sys?.createdAt &&( 
+                        <p className='timestamp'>
+                            {!articleInfo?.sys?.updatedAt? 
+                                (relativeDate(articleInfo?.sys?.createdAt))
+                                :(relativeDate(articleInfo?.sys?.updatedAt))
+                            }
+                        </p> 
+                    )}
+
+                    {article?.tags &&
+                    ( <p className='tags'>{article?.tags}</p>)
+                    }
+
                 </div>
-            } 
 
-            {
-                <div className='media-con'>
+                <p className='text'>{article?.description}</p>
 
-               {article?.image && 
-                    <div className='img-com-con'>
-                        <Image src={article.image.fields.file.url} />
-                    </div> 
-                }
-
-            {article?.album && 
-                article.album?.map((image)=>(
-                    <div className='img-com-con' key={image.sys.id} >
-                        <Image  src={image.fields.file.url} />
-                    </div>  
-                ))
-                }
-           
-                {videoId && (<YouTube vi opts={opts} videoId={videoId}/>)}
-               
-            </div>
-            }
-            
-            
-
-            {
-               typeof article?.text =='string' ?
-               (
-                    <div className='textbox' >{article.text.value}</div>
-                )
-           
-               :(
-                   article?.text?.content?.map((textBox, index)=>(
-                       <div key={index} className='textbox'>
-                           {textBox?.content[0].value}
+                {
+                    article?.imageMain && (
+                        <div className='image-con'>
+                            <Image src={article?.imageMain?.fields?.file?.url}/>
                         </div>
-                    ))
-               )
-            }
-            <div className='link-con'>
-            {
-               links && 
-               links?.map((link, index)=>(
-                    <a 
-                        key={index} 
-                        href={link?.data?.uri}
-                        target="_blank" 
-                        rel="noreferrer">
-                            {link?.content[0]?.value}
-                    </a>
-               ))
-               }
+                    )
+                }
+
+                {
+                    article?.heading1 &&(
+                    <h2 className='heading'>{article?.heading1}</h2>)
+                }
+
+                {
+                article?.text1 && (
+                    <div className='textbox'>{
+                    <Text directory={article?.text1?.content}/>
+                    }</div>
+                )
+                }
+                
+                {
+                    article?.image1 && (
+                        <div >
+                            <Image src={article?.image1?.fields?.file?.url}/>
+                        </div>
+                    )
+                }
+
+                {
+                    article?.subHeading11 &&(
+                    <h3 className='subheading'>{article?.subHeading11}</h3>)
+                }
+
+                {
+                article?.text11 && (
+                    <div className='textbox'>{
+                    <Text directory={article?.text11?.content}/>
+                    }</div>
+                )
+                }
+
+                {
+                    article?.image11 && (
+                        <div className='image-con'>
+                            <Image src={article?.image11?.fields?.file?.url}/>
+                        </div>
+                    )
+                }
+
+                {
+                    article?.heading2 &&(
+                    <h2 className='heading'>{article?.heading2}</h2>)
+                }
+
+                {
+                article?.text2 && (
+                    <div className='textbox'>{
+                    <Text directory={article?.text2?.content}/>
+                    }</div>
+                )
+                }
+
+                {
+                    article?.image2 && (
+                        <div className='image-con'>
+                            <Image src={article?.image2?.fields?.file?.url}/>
+                        </div>
+                    )
+                }
+
+                {
+                    article?.subheading21 &&
+                    (<h3 className='subheading'>{article?.subheading21}</h3>)
+                }
+
+                {
+                article?.text21 && (
+                    <div className='textbox'>{
+                    <Text directory={article?.text21?.content}/>
+                    }</div>
+                )
+                }
+
+                {
+                    article?.image21 && (
+                        <div className='image-con'>
+                            <Image src={article?.image21?.fields?.file?.url}/>
+                        </div>
+                    )
+                }
+
+                
             </div>
- 
         </div>
+           
     )
 }
 
