@@ -203,7 +203,10 @@ $Primary: #ff6464;
           margin: 3px;
           justify-content: center;
           display: flex;
-
+          border-width: 2px;
+          border-color: $Light;
+          border-style: solid;
+          border-radius: 6px;
           .img {
             max-width: 246px;
             max-height: 148px;

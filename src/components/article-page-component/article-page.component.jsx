@@ -170,6 +170,27 @@ const ArticlePage = ()=>{
                         </div>
                     )
                 }
+                {
+                    article?.links && (
+                        <div className='link-con'>
+                            {
+                                links?.map((link)=>{
+                                    return(
+                                        <a 
+                                            className='link'
+                                            href={link?.data?.uri}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            {link?.content[0]?.value}
+                                        </a>
+                                    )
+                                })
+                            }
+                        </div>
+                        
+                    )
+                }
 
                 
             </div>
