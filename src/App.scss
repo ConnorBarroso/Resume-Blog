@@ -11,18 +11,3 @@ $Light: #8695a4;
   width: 100vw;
   max-width: 100%;
 }
-
-.show-header {
-  position: fixed;
-  width: 130px;
-  border-radius: 0px 0px 10px 10px;
-  top: 0px;
-  background-color: #d6eaf0;
-  color: #142850;
-  cursor: pointer;
-  opacity: 0.25;
-  &:hover {
-    background-color: $Primary;
-    opacity: 1;
-  }
-}

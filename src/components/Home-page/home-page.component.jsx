@@ -9,8 +9,10 @@ import './home-page.styles.scss'
 
 const Homepage = ()=>{
     const [posts, setPosts]=useState( [] )
+    const [mostRecentPost, setMostRecentPost]=useState( [] )
     const [recentPosts, setRecentPosts]=useState( [] )
     const [works, setWorks]=useState( [] )
+    const [mobile, setMobile] = useState(false)
 
     useEffect(()=> {
         client.getEntries()
@@ -33,6 +35,21 @@ const Homepage = ()=>{
         setWorks(filter)
         console.log('works',works)
     }, [posts])
+
+    useEffect(()=>{
+        setMostRecentPost(posts[0])
+        console.log('most recent post', mostRecentPost)
+    }, [posts] )
+
+    useEffect(() => {
+        if(window.innerWidth < 600){
+            setMobile(true)
+        }else{
+            setMobile(false)
+        }
+        
+        console.log('mobile', mobile)
+    }, )
 
     return(
         <div className='homepage'>

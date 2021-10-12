@@ -28,7 +28,7 @@ const Workspage = ()=>{
 
     return(
         <div className='works-page'>
-            <h1 className='works'>Work</h1>
+            <h1 className='works'>Works</h1>
             {
                         works?.map((work)=>{
                             return(

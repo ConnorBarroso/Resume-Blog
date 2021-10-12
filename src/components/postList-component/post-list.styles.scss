@@ -84,3 +84,34 @@ $Light: #8695a4;
     }
   }
 }
+
+@media (max-width: 600px) {
+  .post-list {
+    font-family: "Heebo";
+    margin: 100px 0px 0px 0px;
+    width: 90vw;
+    .title {
+    }
+    .post {
+      width: 100%;
+      .post-con {
+        width: 100%;
+        .title-con {
+          &:hover {
+            color: $Primary;
+          }
+        }
+
+        .stamp-tags-con {
+          .timestamp {
+          }
+          .tags {
+          }
+        }
+
+        .large-textbox {
+        }
+      }
+    }
+  }
+}
