@@ -118,3 +118,118 @@ $Primary: #ff6464;
     }
   }
 }
+
+@media (max-width: 600px) {
+  .works-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 90px 0px 0px 0px;
+    .works {
+      font-family: "Heebo", sans-serif;
+      font-weight: 900;
+      font-size: 44px;
+      line-height: 60px;
+      color: $Dark;
+      width: 100%;
+      text-align: left;
+      margin: 0px;
+    }
+    .featured {
+      font-family: "Heebo", sans-serif;
+      font-weight: normal;
+      font-style: normal;
+      font-size: 22px;
+      line-height: 60px;
+      color: $Dark;
+      margin: 15px 0px 13px 0px;
+      width: 100%;
+      text-align: left;
+    }
+    .work-con {
+      display: flex;
+      flex-direction: column;
+      margin: 31px 0px 15px 0px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #e0e0e0;
+      width: 100%;
+      .img-con {
+        width: 100%;
+        height: auto;
+
+        justify-content: center;
+        display: flex;
+
+        .img {
+          max-width: 100%;
+          max-height: auto;
+          border-radius: 6px;
+        }
+      }
+      .post-con {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        text-align: left;
+        background-color: white;
+        margin-left: 18px;
+        width: 100%;
+
+        height: auto;
+
+        .title-con {
+          width: fit-content;
+          font-size: 30px;
+          font-weight: 700;
+          line-height: 44px;
+          margin: 5px;
+          color: $Dark;
+          cursor: pointer;
+          &:hover {
+            color: $Primary;
+          }
+        }
+
+        .stamp-tags-con {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 10px;
+          margin: 7px 6px 0px 5px;
+
+          .timestamp {
+            color: $Dark;
+            font-family: "Heebo";
+            font-size: 18px;
+            font-weight: 400;
+            width: auto;
+            margin: 0px 5px 0px 0px;
+          }
+          .tags {
+            margin: 0px 5px 0px 0px;
+            padding-left: 0px;
+            color: $Dark;
+            font-family: "Heebo";
+            font-size: 18px;
+            font-weight: 400;
+            width: auto;
+            border-width: 0px 0px 0px 0px;
+            border-style: solid;
+            border-color: $Dark;
+            color: $Light;
+          }
+        }
+
+        .large-textbox {
+          width: calc(80%);
+          max-height: 63px;
+          overflow: hidden;
+          color: $Dark;
+          margin: 5px 5px 0px 5px;
+          font-size: 16;
+        }
+      }
+    }
+  }
+}
