@@ -103,13 +103,20 @@ $Light: #8695a4;
         }
 
         .stamp-tags-con {
+          display: flex;
+          flex-direction: column;
+          margin: 16px 0px 10px 0px;
           .timestamp {
           }
           .tags {
+            border-width: 0px;
+            padding-left: 0px;
           }
         }
 
         .large-textbox {
+          width: 90%;
+          max-height: 100px;
         }
       }
     }
